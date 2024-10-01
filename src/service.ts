@@ -17,9 +17,7 @@ class Service {
     this.channels = [];
 
     let res: Response | null = await fetch(
-      `https://11b0-85-228-27-115.ngrok-free.app/proxy?url=${encodeURIComponent(
-        "http://tunestream.me:8080/get.php?username=erdnK3E0fD6R&password=pYbwx5dC2XXa&type=m3u_plus&output=ts"
-      )}`
+      `${import.meta.env.BASE_URL}/playlist.m3u`
     );
     let rawM3U: string | null = await res.text();
     res = null;
